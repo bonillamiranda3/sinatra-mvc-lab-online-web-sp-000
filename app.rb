@@ -10,4 +10,4 @@ class App < Sinatra::Base
     @piglatinizer = PigLatinizer.new(params[:user_phrase])
     erb :piglatinize
   end
-end 
+end
