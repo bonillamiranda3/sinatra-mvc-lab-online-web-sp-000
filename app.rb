@@ -10,4 +10,3 @@ post '/piglatinize' do
   erb : piglatinizer
 end
 end
-
