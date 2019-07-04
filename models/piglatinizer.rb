@@ -1,31 +1,18 @@
+
 class PigLatinizer
-  def piglatinize(input)
-    if input.split.size==1
-      individual(input)
+  def translate(word)
+    if word[0].downcase[/[aeiou]/]
+      word+='w'
     else
-      eachWord(input)
-    end
-  end
-
-  def individual(word)
-    new_word=word.split('')
-    if new_word.first.match(/[aeoiu]/i)
-      new_word.push("way")
-    else
-      while !new_word.first.match(/[aeoiu]/)
-        new_word.push(new_word.first).shift
+      while !word[0].downcase[/[aeiou]/]
+        word = word[1..-1]+word[0]
       end
-      new_word.push("ay")
     end
-    new_word.join
+    word+'ay'
   end
 
-  def eachWord(sentence)
-    arr=sentence.split(" ")
-    new_arr=arr.collect do |item|
-      individual(item)
-    end
-    new_arr.join(" ")
+  def piglatinize(text)
+    text.split(' ').map {|word| translate(word)}.join(' ')
   end
 
 end
