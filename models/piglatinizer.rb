@@ -9,7 +9,7 @@ class PigLatinizer
 
   def individual(word)
     new_word=word.split('')
-    if new_word.first.match(/[aeiou]/i)
+    if new_word.first.match(/[aeoiu]/i)
       new_word.push("way")
     else
       while !new_word.first.match(/[aeoiu]/)
