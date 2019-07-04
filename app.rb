@@ -7,7 +7,7 @@ end
 
 post '/piglatinize' do
   @piglatinizer = PigLatinizer.new(params[:user_phrase])
-  erb :results
+  erb : piglatinizer
 end
 
 end
