@@ -9,5 +9,5 @@ post '/piglatinize' do
   @piglatinizer = PigLatinizer.new(params[:user_phrase])
   erb : piglatinizer
 end
-
 end
+
